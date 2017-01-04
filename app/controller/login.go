@@ -23,10 +23,20 @@ var (
 	oauthStateString = "randomstringxd"
 )
 
+type OAuth2Info struct {
+	ClientID     string
+	ClientSecret string
+}
+
 // Handle login using Battle.net account
 func LoginGET(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	url := oauthConf.AuthCodeURL(oauthStateString, oauth2.AccessTypeOnline)
 	http.Redirect(w, r, url, http.StatusTemporaryRedirect)
+}
+
+func ConfigureOAuth2(o OAuth2Info) {
+	oauthConf.ClientID = o.ClientID
+	oauthConf.ClientSecret = o.ClientSecret
 }
 
 func AuthGET(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
