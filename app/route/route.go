@@ -5,7 +5,7 @@ import (
 
 	"github.com/julienschmidt/httprouter"
 
-	"github.com/albshin/overmatch/app/controller"
+	"github.com/albshin/overpugs/app/controller"
 )
 
 func Route() *httprouter.Router {

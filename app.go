@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/albshin/overmatch/app/route"
+	"github.com/albshin/overpugs/app/route"
 )
 
 func main() {
