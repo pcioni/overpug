@@ -1,5 +1,82 @@
-{{define "title"}}Overmatch{{end}}
-{{define "head"}}{{end}}
+{{define "title"}}Overpug{{end}}
+{{define "head"}}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../static/stylesheets/index.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-navbar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+{{end}}
 {{define "content"}}
-    <a href="/login">Login with Battle.net</a></li>
+<header class="w3-container w3-red w3-center w3-padding-128">
+  <h1 class="w3-margin w3-jumbo"><img src="../static/assets/overpug_logo.png" style="max-width: 75%"></h1>
+  <p class="w3-xlarge">Pick up Games for Overwatch</p>
+  <a href="/"><button class="w3-btn w3-padding-16 w3-large w3-margin-top">Login with Battle.Net</button></a>
+  <style>
+  header {
+  	background-image: URL("../static/assets/overpug_background.png");
+  }
+  </style>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Looking for more competition?</h1>
+      <h5 class="w3-padding-32">OverPUG has lobbies with top players playing daily. Take a look, all you have to do is sign in with your Battletag.</h5>
+
+      <p class="w3-text-grey">We require Discord for all of our players in order to be able to play.</p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <img src="../static/assets/ana_portrait.png">
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <img>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Worried about not being good enough?</h1>
+      <h5 class="w3-padding-32">No problem, OverPUG is capable of sorting players by their competitive Skill Rating. We also support creating lobbies with restricted Skill Rating requirements.</h5>
+
+      <p class="w3-text-grey"></p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge"></h1>
+    <footer>
+	<UL style="list-style-type: none">
+		<li style="font-size: 20px;"><a href="/" style="text-decoration: none;">Contact Us</a></li>
+	</UL>
+</footer>
+</div>
+
+<!-- Footer -->
+
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
 {{end}}

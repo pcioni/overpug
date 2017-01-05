@@ -21,6 +21,7 @@ func main() {
 	}
 	log.Println("Config loaded.")
 	controller.ConfigureOAuth2(config.OAuth2)
+	session.ConfigureSessions(config.Session)
 
 	// Create router, middleware before routing
 	r := route.Middleware(route.Route())

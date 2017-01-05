@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/albshin/overpug/app/session"
+
 	"github.com/julienschmidt/httprouter"
 	"golang.org/x/oauth2"
 )
@@ -75,8 +77,13 @@ func AuthGET(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		fmt.Printf("Welcome %s\n", user.Battletag)
-		http.Redirect(w, r, "/", http.StatusSeeOther)
+
+		sess := session.GetSession(r)
+		sess.Values["id"] = user.ID
+		sess.Values["battletag"] = user.Battletag
+		sess.Save(r, w)
+
+		http.Redirect(w, r, "/", http.StatusFound)
 		return
 	}
 }
