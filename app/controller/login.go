@@ -76,5 +76,7 @@ func AuthGET(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 			log.Fatal(err)
 		}
 		fmt.Printf("Welcome %s\n", user.Battletag)
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
 	}
 }

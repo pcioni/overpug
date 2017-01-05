@@ -3,9 +3,10 @@ package route
 import (
 	"net/http"
 
+	"github.com/gorilla/context"
 	"github.com/julienschmidt/httprouter"
 
-	"github.com/albshin/overpugs/app/controller"
+	"github.com/albshin/overpug/app/controller"
 )
 
 func Route() *httprouter.Router {
@@ -25,4 +26,9 @@ func Route() *httprouter.Router {
 	})
 
 	return r
+}
+
+func Middleware(h http.Handler) http.Handler {
+	h = context.ClearHandler(h)
+	return h
 }

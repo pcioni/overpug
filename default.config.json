@@ -1,5 +1,9 @@
 {
-    "OAuth2" : {
+    "Session": {
+        "SecretKey": "",
+        "Name": ""
+    },
+    "OAuth2": {
         "ClientID": "",
         "ClientSecret": ""
     }
